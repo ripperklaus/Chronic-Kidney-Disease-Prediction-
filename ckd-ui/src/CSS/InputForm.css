@@ -1,0 +1,89 @@
+/* Form container styling */
+.Form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #aaa3a3;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for fields */
+.Form-container form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 1.5rem;
+}
+
+
+/* Label styling */
+.Form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input and select alignment */
+.Form-container input,
+.Form-container select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #414040;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #413e3e;
+  transition: border-color 0.2s ease;
+}
+
+.Form-container input:focus,
+.Form-container select:focus {
+  outline: none;
+  border-color: #112653;
+}
+
+/* Submit button area */
+.submit-Button {
+  grid-column: span 2;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Predict button */
+.Button-Predict {
+  padding: 0.75rem 2rem;
+  background-color: #363737;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Button-Predict:hover {
+  background-color: #1e40af;
+}
+
+/* Error message */
+.Form-container p {
+  font-size: 0.9rem;
+  color: rgb(119, 62, 62);
+  margin-top: 0.5rem;
+}
+/* Ensure spacing between each form field */
+.Form-container form > div {
+  margin-bottom: 1rem;
+}
+
+/* Input and select styling */
+.Form-container input,
+.Form-container select {
+  margin-top: 0.4rem; /* space between label and field */
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
