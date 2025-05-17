@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
-import pickle
+from fastapi.middleware.cors import CORSMiddleware
+import pickle  # ✅ Add this line
 
 # Load the model
 with open("kidney_model.pkl", "rb") as f:
@@ -41,8 +42,17 @@ class KidneyData(BaseModel):
 with open("kidney_model.pkl", "rb") as f:
     model = pickle.load(f)
 
-print("Type of loaded object:", type(model))
-print("Is model object callable?", callable(getattr(model, "predict", None)))
+
+
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://ckd-b3yt2tulr-ripperklaus-projects.vercel.app"],  # or your frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/predict")
 def predict(data: KidneyData):
